@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="The Mars Files" />
+    <section>
+      <h3>Rover Types</h3>
+      <br />
+      <input type="radio" v-model="rover" value="0" />Curiosity
+      <input type="radio" v-model="rover" value="1" />Opportunity
+      <input type="radio" v-model="rover" value="2" />Spirit
+      <br />
+    </section>
+    <HelloWorld msg="The Mars Files" :rover="rover" />
   </div>
 </template>
 
@@ -12,6 +19,11 @@ export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  data() {
+    return {
+      rover: "0",
+    };
   },
 };
 </script>
